@@ -7,6 +7,7 @@ import org.example.expert.domain.common.dto.AuthUser;
 import org.example.expert.domain.todo.dto.request.TodoSaveRequest;
 import org.example.expert.domain.todo.dto.response.TodoResponse;
 import org.example.expert.domain.todo.dto.response.TodoSaveResponse;
+import org.example.expert.domain.todo.dto.response.TodoSearchResponse;
 import org.example.expert.domain.todo.service.TodoService;
 import org.example.expert.domain.user.entity.CustomUserDetails;
 import org.springframework.data.domain.Page;
@@ -32,14 +33,16 @@ public class TodoController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<Page<TodoResponse>> getTodos(
+    public ResponseEntity<Page<TodoSearchResponse>> getTodos(
+            @RequestParam(required = false) String title,   // 제목 검색 추가
+            @RequestParam(required = false) String nickname, // 닉네임 검색 추가
             @RequestParam(required = false) String weather,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endDate,
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int size) {
 
-        Page<TodoResponse> todos = todoService.getTodos(weather, startDate, endDate, page, size);
+        Page<TodoSearchResponse> todos = todoService.getTodos(title, nickname, startDate, endDate, weather, page, size);
         return ResponseEntity.ok(todos);
     }
 

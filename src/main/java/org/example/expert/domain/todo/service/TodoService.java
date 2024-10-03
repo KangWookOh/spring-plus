@@ -7,6 +7,7 @@ import org.example.expert.domain.common.exception.InvalidRequestException;
 import org.example.expert.domain.todo.dto.request.TodoSaveRequest;
 import org.example.expert.domain.todo.dto.response.TodoResponse;
 import org.example.expert.domain.todo.dto.response.TodoSaveResponse;
+import org.example.expert.domain.todo.dto.response.TodoSearchResponse;
 import org.example.expert.domain.todo.entity.Todo;
 import org.example.expert.domain.todo.repository.TodoRepository;
 import org.example.expert.domain.user.dto.response.UserResponse;
@@ -31,9 +32,7 @@ public class TodoService {
     @Transactional
     public TodoSaveResponse saveTodo(CustomUserDetails authUser, TodoSaveRequest todoSaveRequest) {
         User user = User.fromAuthUser(authUser);
-
         String weather = weatherClient.getTodayWeather();
-
         Todo newTodo = new Todo(
                 todoSaveRequest.getTitle(),
                 todoSaveRequest.getContents(),
@@ -41,7 +40,6 @@ public class TodoService {
                 user
         );
         Todo savedTodo = todoRepository.save(newTodo);
-
         return new TodoSaveResponse(
                 savedTodo.getId(),
                 savedTodo.getTitle(),
@@ -51,20 +49,9 @@ public class TodoService {
         );
     }
 
-    public Page<TodoResponse> getTodos(String weather, LocalDateTime startDate, LocalDateTime endDate, int page, int size) {
+    public Page<TodoSearchResponse> getTodos(String title, String nickname, LocalDateTime startDate, LocalDateTime endDate, String weather, int page, int size) {
         Pageable pageable = PageRequest.of(page - 1, size);
-
-        Page<Todo> todos = todoRepository.findTodosByConditions(weather, startDate, endDate, pageable);
-
-        return todos.map(todo -> new TodoResponse(
-                todo.getId(),
-                todo.getTitle(),
-                todo.getContents(),
-                todo.getWeather(),
-                new UserResponse(todo.getUser().getId(), todo.getUser().getEmail()),
-                todo.getCreatedAt(),
-                todo.getModifiedAt()
-        ));
+        return todoRepository.searchTodos(title, nickname, startDate, endDate, weather, pageable);
     }
 
     public TodoResponse getTodo(long todoId) {
