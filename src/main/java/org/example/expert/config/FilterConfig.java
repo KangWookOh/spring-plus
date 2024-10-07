@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class FilterConfig {
 
     private final JwtUtil jwtUtil;
-    private CustomUserDetailsService customUserDetailsService;
+    private final CustomUserDetailsService customUserDetailsService;
 
     @Bean
     public FilterRegistrationBean<JwtAuthenticationFilter> jwtFilter() {

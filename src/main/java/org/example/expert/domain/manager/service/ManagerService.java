@@ -29,6 +29,7 @@ public class ManagerService {
     private final ManagerRepository managerRepository;
     private final UserRepository userRepository;
     private final TodoRepository todoRepository;
+    private final LogService logService;
 
     @Transactional
     public ManagerSaveResponse saveManager(CustomUserDetails authUser, long todoId, ManagerSaveRequest managerSaveRequest) {
@@ -36,6 +37,9 @@ public class ManagerService {
         User user = User.fromAuthUser(authUser);
         Todo todo = todoRepository.findById(todoId)
                 .orElseThrow(() -> new InvalidRequestException("Todo not found"));
+
+        // 로그 기록 (매니저 등록 시작)
+        logService.saveLog("MANAGER_SAVE", "Manager save request started", user, todo);
 
         if (todo.getUser() == null || !ObjectUtils.nullSafeEquals(user.getId(), todo.getUser().getId())) {
             throw new InvalidRequestException("담당자를 등록하려고 하는 유저가 유효하지 않거나, 일정을 만든 유저가 아닙니다.");
@@ -50,6 +54,9 @@ public class ManagerService {
 
         Manager newManagerUser = new Manager(managerUser, todo);
         Manager savedManagerUser = managerRepository.save(newManagerUser);
+
+        // 로그 기록 (매니저 등록 성공)
+        logService.saveLog("MANAGER_SAVE", "Manager saved successfully", user, todo);
 
         return new ManagerSaveResponse(
                 savedManagerUser.getId(),
