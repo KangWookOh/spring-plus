@@ -1,0 +1,9 @@
+ID: 1, Time: 2024-10-07T15:43:41.238651, RequestType: MANAGER_SAVE, Description: Manager save request started, User: 1, Todo: 1
+ID: 2, Time: 2024-10-07T15:44:08.245157, RequestType: MANAGER_SAVE, Description: Manager save request started, User: 2, Todo: 1
+ID: 3, Time: 2024-10-07T15:45:49.257703, RequestType: MANAGER_SAVE, Description: Manager save request started, User: 1, Todo: 1
+ID: 4, Time: 2024-10-07T15:45:49.268753, RequestType: MANAGER_SAVE, Description: Manager saved successfully, User: 1, Todo: 1
+ID: 5, Time: 2024-10-07T16:14:37.047633, RequestType: MANAGER_SAVE, Description: Manager save request started, User: 1, Todo: 1
+ID: 6, Time: 2024-10-07T16:15:00.557096, RequestType: MANAGER_SAVE, Description: Manager save request started, User: 1, Todo: 1
+ID: 7, Time: 2024-10-07T16:15:00.566078, RequestType: MANAGER_SAVE, Description: Manager saved successfully, User: 1, Todo: 1
+ID: 8, Time: 2024-10-07T16:30:56.359027, RequestType: MANAGER_SAVE, Description: Manager save request started, User: 1, Todo: 2
+ID: 9, Time: 2024-10-07T16:30:56.379249, RequestType: MANAGER_SAVE, Description: Manager saved successfully, User: 1, Todo: 2
