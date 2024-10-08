@@ -1,9 +1,9 @@
 FROM openjdk:17-oracle
 
-VOLUME /tmp
+WORKDIR /app
 
-ARG JAR_FILE=/build/libs/*.jar
+COPY build/libs/expert-0.0.1-SNAPSHOT.jar app.jar
 
-COPY ${JAR_FILE} SNAPSHOT.jar
+EXPOSE 8080
 
-ENTRYPOINT ["nohup", "java", "-jar", "SNAPSHOT.jar", "&"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
