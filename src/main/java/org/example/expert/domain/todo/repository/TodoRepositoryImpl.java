@@ -3,16 +3,11 @@ package org.example.expert.domain.todo.repository;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import lombok.RequiredArgsConstructor;
-import org.example.expert.domain.todo.dto.response.TodoResponse;
 import org.example.expert.domain.todo.dto.response.TodoSearchResponse;
-import org.example.expert.domain.todo.entity.QTodo;
 import org.example.expert.domain.todo.entity.Todo;
-import org.example.expert.domain.user.entity.QUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.expression.spel.ast.Projection;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -52,7 +47,7 @@ public class TodoRepositoryImpl implements TodoRepositoryCustom{
                         comment.countDistinct()    // 댓글 수
                 ))
                 .from(todo)
-                .leftJoin(todo.user, user)
+                .leftJoin(todo.user, user) // 연관관계 컬럼들을 한번에 가지고 오기 위해
                 .leftJoin(todo.comments, comment)
                 .where(
                         titleContains(title),

@@ -44,6 +44,7 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'com.mysql:mysql-connector-j'
 
+
     // BCrypt for password encoding
     implementation 'at.favre.lib:bcrypt:0.10.2'
 
