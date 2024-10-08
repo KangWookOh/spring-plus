@@ -27,6 +27,8 @@ public class CustomUserDetails implements UserDetails {
         this.nickname = user.getNickname();
     }
 
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();

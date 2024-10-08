@@ -17,4 +17,5 @@ public class AuthUser {
         this.userRole = userRole;
         this.nickname = nickname;
     }
+
 }
