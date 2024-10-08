@@ -3,7 +3,7 @@ package org.example.expert.domain.todo.repository;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import org.example.expert.domain.todo.dto.response.TodoSearchResponse;
+import org.example.expert.domain.todo.dto.response.TodoSearchResponseDto;
 import org.example.expert.domain.todo.entity.Todo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -37,10 +37,10 @@ public class TodoRepositoryImpl implements TodoRepositoryCustom{
     }
 
     @Override
-    public Page<TodoSearchResponse> searchTodos(String title, String nickname, LocalDateTime startDate, LocalDateTime endDate, String weather, Pageable pageable) {
-        List<TodoSearchResponse> results = queryFactory
+    public Page<TodoSearchResponseDto> searchTodos(String title, String nickname, LocalDateTime startDate, LocalDateTime endDate, String weather, Pageable pageable) {
+        List<TodoSearchResponseDto> results = queryFactory
                 .select(Projections.constructor(
-                        TodoSearchResponse.class,
+                        TodoSearchResponseDto.class,
                         todo.id,
                         todo.title,
                         todo.user.countDistinct(),  // 담당자 수
