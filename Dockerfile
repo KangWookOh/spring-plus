@@ -6,4 +6,4 @@ ARG JAR_FILE=/build/libs/*.jar
 
 COPY ${JAR_FILE} SNAPSHOT.jar
 
-ENTRYPOINT ["nohup", "java", "-jar", "app.jar", "&"]
+ENTRYPOINT ["nohup", "java", "-jar", "SNAPSHOT.jar", "&"]
