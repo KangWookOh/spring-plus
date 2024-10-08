@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://nbcamplus.cr46m4a04sqq.ap-northeast-2.rds.amazonaws.com/nbcamplus
+    username: root
+    password: d7845126
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+jwt:
+  secret:
+    key: 7Iqk7YyM66W07YOA7L2U65Sp7YG065+9U3ByaW5n6rCV7J2Y7Yqc7YSw7LWc7JuQ67mI7J6F64uI64ukLg==
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  port: 8080
+log:
+  export:
+    path: /Users/kanguk/Desktop/nbcam/spring-plus/src/main/log
+
+logging:
+  level:
+    root: info
+
+
+cloud:
+  aws:
+    s3:
+      bucket: ${AWS_S3_BUCKET}
+    region:
+      static: ${AWS_REGION}
+    stack:
+      auto: false
+    credentials:
+      accessKey: ${AWS_ACCESS_KEY}
+      secretKey: ${AWS_SECRET_KEY}
