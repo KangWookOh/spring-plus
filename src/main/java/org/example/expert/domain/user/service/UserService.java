@@ -9,11 +9,17 @@ import org.example.expert.domain.user.dto.request.UserChangePasswordRequest;
 import org.example.expert.domain.user.dto.response.UserResponse;
 import org.example.expert.domain.user.entity.User;
 import org.example.expert.domain.user.repository.UserRepository;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -46,6 +52,23 @@ public class UserService {
         }
 
         user.changePassword(passwordEncoder.encode(userChangePasswordRequest.getNewPassword()));
+    }
+
+    public List<UserResponse> getUsersByNickname(String nickname) {
+        Optional<User> users = userRepository.findByNickname(nickname);
+        return users.stream()
+                .map(user -> new UserResponse(user.getId(), user.getEmail()))
+                .collect(Collectors.toList());
+    }
+
+    @Async
+    public CompletableFuture<List<UserResponse>> getUsersByNicknameAsync(String nickname) {
+        return CompletableFuture.supplyAsync(() -> {
+            Optional<User> users = userRepository.findByNickname(nickname);
+            return users.stream()
+                    .map(user -> new UserResponse(user.getId(), user.getEmail()))
+                    .collect(Collectors.toList());
+        });
     }
 
     private static void validateNewPassword(UserChangePasswordRequest userChangePasswordRequest) {

@@ -1,6 +1,8 @@
 package org.example.expert.domain.user.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.expert.domain.common.dto.AuthUser;
@@ -10,7 +12,7 @@ import org.example.expert.domain.user.enums.UserRole;
 @Getter
 @Entity
 @NoArgsConstructor
-@Table(name = "users")
+@Table(name = "users", indexes = @Index(name = "idx_nickname", columnList = "nickname"))
 public class User extends Timestamped {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +49,10 @@ public class User extends Timestamped {
         this.email = email;
         this.userRole = userRole;
         this.nickname = nickname;
+    }
+
+    public User(@NotBlank @Email String email, String encodedPassword, @NotBlank String userRole, UserRole userRole1) {
+        super();
     }
 
     public static User fromAuthUser(CustomUserDetails customUserDetails) {
