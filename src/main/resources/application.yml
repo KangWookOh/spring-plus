@@ -28,9 +28,10 @@ server:
       enabled: true
       force: true
   port: 8080
+
 log:
   export:
-    path: /Users/kanguk/Desktop/nbcam/spring-plus/src/main/log
+    path: /var/jenkins_home/workspace/nbcam/spring-plus/src/main/log
 
 logging:
   level:
