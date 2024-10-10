@@ -57,14 +57,13 @@ health-check api : http://13.124.17.212:8081/health
 
 ```mermaid
 graph TD
+  graph TD
     A[일반 메소드] -->|0.846ms| B[인덱싱]
-    B -->|0.771ms| C[최종]
-    A -->|0.702ms| D[쿼리 최적화]
-    D --> C
-    A -->|0.695ms| E[캐싱]
-    E --> C
+    B -->|0.702ms| C[쿼리 최적화]
+    C -->|0.695ms| D[캐싱]
+    D -->|0.771ms| E[최종]
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
-    style C fill:#ade8f4,stroke:#333,stroke-width:2px
+    style E fill:#ade8f4,stroke:#333,stroke-width:2px
 ```
 
 ## 분석
