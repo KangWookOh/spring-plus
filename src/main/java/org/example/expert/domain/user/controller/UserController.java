@@ -40,7 +40,7 @@ public class UserController {
 
     @GetMapping("/search")
     public ResponseEntity<List<UserResponse>> searchUsersByNickname(@RequestParam String nickname) {
-        List<UserResponse> users = userService.getUsersByNickname(nickname);
+        List<UserResponse> users = (List<UserResponse>) userService.getUsersByNicknameAsync(nickname);
         return ResponseEntity.ok(users);
     }
 }

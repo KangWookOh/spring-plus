@@ -54,7 +54,6 @@ public class UserService {
         user.changePassword(passwordEncoder.encode(userChangePasswordRequest.getNewPassword()));
     }
 
-    @Cacheable(value = "userCache", key = "#nickname")
     public List<UserResponse> getUsersByNickname(String nickname) {
         Optional<User> users = userRepository.findByNickname(nickname);
         return users.stream()
