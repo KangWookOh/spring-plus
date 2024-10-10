@@ -61,6 +61,7 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+
     @Async
     public CompletableFuture<List<UserResponse>> getUsersByNicknameAsync(String nickname) {
         return CompletableFuture.supplyAsync(() -> {

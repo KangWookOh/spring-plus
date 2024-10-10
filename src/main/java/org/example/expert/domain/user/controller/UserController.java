@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -37,10 +36,10 @@ public class UserController {
         userService.updateProfileImage(authUSer.getId(), file);
         return ResponseEntity.ok().build();
     }
-
     @GetMapping("/search")
     public ResponseEntity<List<UserResponse>> searchUsersByNickname(@RequestParam String nickname) {
-        List<UserResponse> users = (List<UserResponse>) userService.getUsersByNicknameAsync(nickname);
+        List<UserResponse> users = userService.getUsersByNickname(nickname);
         return ResponseEntity.ok(users);
     }
+
 }
