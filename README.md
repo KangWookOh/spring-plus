@@ -1,6 +1,7 @@
 # SPRING PLUS
 # Skill
 Jenkins Docker Spring actuator
+health-check api : http://13.124.17.212:8081/health
 
 # EC2
 ![image](https://github.com/user-attachments/assets/fcbaccc6-62ae-448f-b6f9-7c5b3ed5974d)
