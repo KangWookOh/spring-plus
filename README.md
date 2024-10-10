@@ -57,7 +57,6 @@ health-check api : http://13.124.17.212:8081/health
 
 ```mermaid
 graph TD
-  graph TD
     A[일반 메소드] -->|0.846ms| B[인덱싱]
     B -->|0.702ms| C[쿼리 최적화]
     C -->|0.695ms| D[캐싱]
