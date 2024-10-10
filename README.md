@@ -1,4 +1,48 @@
 # SPRING PLUS
+# Skill
+Jenkins Docker Spring actuator
+
+# EC2
+![image](https://github.com/user-attachments/assets/fcbaccc6-62ae-448f-b6f9-7c5b3ed5974d)
+
+# VPC
+![image](https://github.com/user-attachments/assets/8e4712ca-ecba-46ea-a34d-22f7516c2234)
+
+# RDS 
+![image](https://github.com/user-attachments/assets/7cdbc29e-b32a-4fbd-a9b8-d1010563013f)
+![image](https://github.com/user-attachments/assets/f65ca591-83f3-4fd3-b0b2-31726e236f80)
+
+# S3
+![image](https://github.com/user-attachments/assets/d215c6ae-2138-46d9-8284-98e5cc701cff)
+
+# Manager Log
+주요 기능 설명:
+스케줄링:
+
+@Scheduled(cron = "0 0 0/6 * * *"): 매 6시간마다 이 메서드가 자동으로 실행됩니다.
+로그 조회:
+
+cutoffDate로부터 1시간 이전의 로그들을 조회하여, 데이터베이스에서 해당 로그들을 가져옵니다.
+조회된 로그의 개수와 각 로그의 내용을 출력하여 확인할 수 있습니다.
+로그 파일 저장:
+
+로그가 저장될 파일의 경로는 logExportPath와 현재 날짜를 기반으로 생성됩니다.
+해당 디렉토리가 존재하지 않으면 새로 생성하며, 이미 존재하는 파일이 있을 경우 파일의 내용을 덧붙이는 방식(FileWriter의 append 모드)으로 로그를 기록합니다.
+각 로그는 formatLog(log) 메서드를 통해 포맷팅된 후 파일에 저장됩니다.
+로그 삭제:
+
+로그가 파일로 저장된 후, 지정된 cutoffDate 이전의 로그들을 데이터베이스에서 삭제합니다.
+예외 처리:
+
+파일 쓰기나 디렉토리 생성 과정에서 발생할 수 있는 IOException에 대해 예외 처리가 되어 있으며, 오류가 발생하면 콘솔에 에러 메시지와 스택 트레이스가 출력됩니다.
+코드 흐름 요약:
+데이터베이스에서 1시간 이전의 로그 조회.
+로그 개수와 내용을 콘솔에 출력.
+로그를 텍스트 파일로 저장.
+로그를 데이터베이스에서 삭제.
+이 코드는 데이터베이스 부하를 줄이기 위해 주기적으로 로그를 외부 파일로 내보내고, 오래된 로그를 제거하여 데이터베이스 공간을 효율적으로 관리합니다.
+![image](https://github.com/user-attachments/assets/999aff7e-cada-48a8-8623-0e79b860311f)
+![Uploading image.png…]()
 
 # 사용자 검색 성능 최적화 결과
 
