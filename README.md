@@ -37,6 +37,7 @@ health-check api : http://13.124.17.212:8081/health
 2. 로그 개수와 내용을 콘솔에 출력.
 3. 로그를 텍스트 파일로 저장.
 4. 로그를 데이터베이스에서 삭제.
+
 데이터베이스 부하를 줄이기 위해 주기적으로 로그를 외부 파일로 내보내고, 오래된 로그를 제거하여 데이터베이스 공간을 효율적으로 관리합니다.
 ![image](https://github.com/user-attachments/assets/999aff7e-cada-48a8-8623-0e79b860311f)
 ![image](https://github.com/user-attachments/assets/111710a9-ed8a-401c-82de-642aaf480512)
