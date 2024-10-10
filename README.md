@@ -3,6 +3,17 @@
 Jenkins Docker Spring actuator
 health-check api : http://13.124.17.212:8081/health
 
+# Jenkins
+![image](https://github.com/user-attachments/assets/bf2ac66b-33b6-42f8-a8c9-ded2f957d85d)
+
+![image](https://github.com/user-attachments/assets/4d74e1ac-a3c1-4dba-99c9-3dbee08b8bdc)
+
+![image](https://github.com/user-attachments/assets/f91c8880-96a4-4059-bac8-05c3fdd05716)
+
+# docker
+![image](https://github.com/user-attachments/assets/d7d5c41f-bc6d-4046-b81c-148b56db0fcd)
+
+
 # EC2
 ![image](https://github.com/user-attachments/assets/fcbaccc6-62ae-448f-b6f9-7c5b3ed5974d)
 
