@@ -45,8 +45,8 @@ public class LogService {
         logRepository.save(log); // 로그를 DB에 저장
     }
 
-    // 매일 새벽 2시에 실행되는 스케줄링 작업
-    @Scheduled(cron = "0 0 0/12 * * *")
+
+    @Scheduled(cron = "0 0 0/6 * * *")
     @Transactional
     public void exportLogsToFile() {
         LocalDateTime cutoffDate = LocalDateTime.now().minusHours(1);
