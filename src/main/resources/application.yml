@@ -31,7 +31,7 @@ server:
 
 log:
   export:
-    path: /var/jenkins_home/workspace/nbcam/spring-plus/src/main/log
+    path: src/main/log
 
 logging:
   level:
