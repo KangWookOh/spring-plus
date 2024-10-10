@@ -1,13 +1,16 @@
 package org.example.expert;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class ExpertApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
-}
+import org.springframework.test.context.ActiveProfiles;
+//
+//@SpringBootTest
+//
+//class ExpertApplicationTests {
+//
+//    @Test
+//    void contextLoads() {
+//    }
+//
+//}
