@@ -13,7 +13,8 @@ Jenkins Docker Spring actuator
 ![image](https://github.com/user-attachments/assets/f65ca591-83f3-4fd3-b0b2-31726e236f80)
 
 # S3
-![image](https://github.com/user-attachments/assets/d215c6ae-2138-46d9-8284-98e5cc701cff)
+![image](https://github.com/user-attachments/assets/58fcf6a9-2f9f-4e60-99ce-13980ec46d70)
+
 
 # Manager Log
 주요 기능 설명:
@@ -42,7 +43,7 @@ cutoffDate로부터 1시간 이전의 로그들을 조회하여, 데이터베이
 로그를 데이터베이스에서 삭제.
 이 코드는 데이터베이스 부하를 줄이기 위해 주기적으로 로그를 외부 파일로 내보내고, 오래된 로그를 제거하여 데이터베이스 공간을 효율적으로 관리합니다.
 ![image](https://github.com/user-attachments/assets/999aff7e-cada-48a8-8623-0e79b860311f)
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/111710a9-ed8a-401c-82de-642aaf480512)
 
 # 사용자 검색 성능 최적화 결과
 
