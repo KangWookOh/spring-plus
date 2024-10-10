@@ -39,7 +39,7 @@ health-check api : http://13.124.17.212:8081/health
 4. 로그를 데이터베이스에서 삭제.
 
 데이터베이스 부하를 줄이기 위해 주기적으로 로그를 외부 파일로 내보내고, 오래된 로그를 제거하여 데이터베이스 공간을 효율적으로 관리합니다.
-![image](https://github.com/user-attachments/assets/999aff7e-cada-48a8-8623-0e79b860311f)
+![image](https://github.com/user-attachments/assets/75827e31-6419-48b4-b5b4-c724f38181a8)
 ![image](https://github.com/user-attachments/assets/111710a9-ed8a-401c-82de-642aaf480512)
 
 # 사용자 검색 성능 최적화 결과
