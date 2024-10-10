@@ -55,17 +55,8 @@ health-check api : http://13.124.17.212:8081/health
 
 ## 시각화
 
-```mermaid
-graph TD
-    A[일반 메소드] -->|0.846ms| B[인덱싱]
-    B -->|0.771ms| C[최종]
-    A -->|0.702ms| D[쿼리 최적화]
-    D --> C
-    A -->|0.695ms| E[캐싱]
-    E --> C
-    style A fill:#f9d5e5,stroke:#333,stroke-width:2px
-    style C fill:#ade8f4,stroke:#333,stroke-width:2px
-```
+![image](https://github.com/user-attachments/assets/b1b1d02a-7c42-4c4b-a128-0784dde777dc)
+
 
 ## 분석
 
