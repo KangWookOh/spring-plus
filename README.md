@@ -5,6 +5,13 @@
 Jenkins ,Spring actuator ,Docker
 
 Health Check API : http://13.124.17.212:8081/health
+### Jenkins
+![image](https://github.com/user-attachments/assets/564ca1b6-192a-43d0-a7b2-d50daef484e1)
+![image](https://github.com/user-attachments/assets/a5a8b33a-9f58-4e96-8e78-9d54fa27e7a7)
+![image](https://github.com/user-attachments/assets/0a76a899-89ba-4be3-afb6-86e142f41603)
+
+### Docker 
+![image](https://github.com/user-attachments/assets/f6608db7-6797-440d-8711-774df20f204e)
 
 ### EC2
 ![image](https://github.com/user-attachments/assets/d8a59231-6fed-40bc-8941-4e4b9f5adbe4)
