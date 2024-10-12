@@ -1,11 +1,11 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://nbcamplus.cr46m4a04sqq.ap-northeast-2.rds.amazonaws.com/nbcamplus
-    url: jdbc:mysql://localhost:3306/plus?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://nbcamplus.cr46m4a04sqq.ap-northeast-2.rds.amazonaws.com/nbcamplus
+    #url: jdbc:mysql://localhost:3306/plus?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
-    password: root
-  #    password: d7845126
+    #password: root
+    password: d7845126
 
   jpa:
     show-sql: true
@@ -15,10 +15,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
-  data:
-    redis:
-      host: localhost
-      port: 6379
 
 jwt:
   secret:

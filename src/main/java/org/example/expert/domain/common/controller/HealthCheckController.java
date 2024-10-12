@@ -23,4 +23,10 @@ public class HealthCheckController {
             return ResponseEntity.status(503).body(health);
         }
     }
+    @GetMapping("/health2")
+    public String healthCheck() {
+        return "Server is UP";
+    }
+
+
 }

@@ -12,7 +12,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     boolean existsByEmail(String email);
 
-    @Query("SELECT NEW org.example.expert.domain.user.dto.response.UserResponse(u.id, u.email) FROM User u WHERE u.nickname = :nickname")
     Optional<User> findByNickname(String nickname);
 
 

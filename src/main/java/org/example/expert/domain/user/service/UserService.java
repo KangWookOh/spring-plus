@@ -54,6 +54,7 @@ public class UserService {
         user.changePassword(passwordEncoder.encode(userChangePasswordRequest.getNewPassword()));
     }
 
+    @Cacheable(value = "userCache", key = "#nickname")
     public List<UserResponse> getUsersByNickname(String nickname) {
         Optional<User> users = userRepository.findByNickname(nickname);
         return users.stream()
@@ -71,15 +72,6 @@ public class UserService {
                     .collect(Collectors.toList());
         });
     }
-
-    private static void validateNewPassword(UserChangePasswordRequest userChangePasswordRequest) {
-        if (userChangePasswordRequest.getNewPassword().length() < 8 ||
-                !userChangePasswordRequest.getNewPassword().matches(".*\\d.*") ||
-                !userChangePasswordRequest.getNewPassword().matches(".*[A-Z].*")) {
-            throw new InvalidRequestException("새 비밀번호는 8자 이상이어야 하고, 숫자와 대문자를 포함해야 합니다.");
-        }
-    }
-
     @Transactional
     public void updateProfileImage(Long userId, MultipartFile file) throws IOException {
         User user = userRepository.findById(userId)
@@ -88,4 +80,13 @@ public class UserService {
         String imageUrl = s3Service.uploadFile(file);
         user.updateProfileImage(imageUrl);
     }
+    private static void validateNewPassword(UserChangePasswordRequest userChangePasswordRequest) {
+        if (userChangePasswordRequest.getNewPassword().length() < 8 ||
+                !userChangePasswordRequest.getNewPassword().matches(".*\\d.*") ||
+                !userChangePasswordRequest.getNewPassword().matches(".*[A-Z].*")) {
+            throw new InvalidRequestException("새 비밀번호는 8자 이상이어야 하고, 숫자와 대문자를 포함해야 합니다.");
+        }
+    }
+
+
 }
