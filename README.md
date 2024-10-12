@@ -7,16 +7,21 @@ Jenkins ,Spring actuator ,Docker
 Health Check API : http://13.124.17.212:8081/health
 
 ### EC2
-![img.png](image/img.png)
+![image](https://github.com/user-attachments/assets/ad7476d9-6968-4420-acbb-7b6b67e13516)
+
 ### RDS
-![img_1.png](image/img_1.png)
+![image](https://github.com/user-attachments/assets/5900798f-2217-47d1-8793-14b1b0d0d7c8)
+
 ### S3
-![img_2.png](image/img_2.png)
+![image](https://github.com/user-attachments/assets/15dd98a3-3a0b-4106-a7db-52c6ac7f6973)
+
 ### 유저 검색 속도
-![img.png](img_3.png)
+![image](https://github.com/user-attachments/assets/e9c1b88e-fc28-43ef-9f75-e184f40e69e2)
+
 
 ### manager log 
-![img.png](img.png)
+![image](https://github.com/user-attachments/assets/86b2ffc1-783b-419a-aa09-e7668aacd308)
+
 
 1. 스케줄링
     * `@Scheduled(cron = "0 0 0/6 * * *")`
