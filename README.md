@@ -7,21 +7,18 @@ Jenkins ,Spring actuator ,Docker
 Health Check API : http://13.124.17.212:8081/health
 
 ### EC2
-![image](https://github.com/user-attachments/assets/ad7476d9-6968-4420-acbb-7b6b67e13516)
+![image](https://github.com/user-attachments/assets/d8a59231-6fed-40bc-8941-4e4b9f5adbe4)
 
 ### RDS
-![image](https://github.com/user-attachments/assets/5900798f-2217-47d1-8793-14b1b0d0d7c8)
+![image](https://github.com/user-attachments/assets/95358816-e0b5-47d8-8e3a-f94cec51d36e)
+
 
 ### S3
-![image](https://github.com/user-attachments/assets/15dd98a3-3a0b-4106-a7db-52c6ac7f6973)
-
-### 유저 검색 속도
-![image](https://github.com/user-attachments/assets/e9c1b88e-fc28-43ef-9f75-e184f40e69e2)
+![image](https://github.com/user-attachments/assets/d8f44d23-80b7-4a50-ac35-a17cb60902e7)
 
 
 ### manager log 
-![image](https://github.com/user-attachments/assets/86b2ffc1-783b-419a-aa09-e7668aacd308)
-
+![image](https://github.com/user-attachments/assets/16b9d7e9-856e-475d-aa43-84368db6da05)
 
 1. 스케줄링
     * `@Scheduled(cron = "0 0 0/6 * * *")`
@@ -45,6 +42,9 @@ Health Check API : http://13.124.17.212:8081/health
 5. 예외 처리
     * `IOException` 대비 예외 처리
     * 오류 발생 시 콘솔에 에러 메시지와 스택 트레이스 출력
+      
+### 유저 검색 속도
+![image](https://github.com/user-attachments/assets/987dc6f6-de91-4b62-a341-fc6f68cd57ab)
 
 ### **캐시가 느린 이유 분석**
 
