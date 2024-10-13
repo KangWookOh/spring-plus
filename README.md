@@ -30,6 +30,8 @@ Health Check API : http://13.124.17.212:8081/health
 1. 스케줄링
     * `@Scheduled(cron = "0 0 0/6 * * *")`
         * 매 6시간마다 메서드 자동 실행
+   <img width="437" alt="image" src="https://github.com/user-attachments/assets/0a3d485c-5541-42ac-a920-af68d10497ff">
+
 
 2. 로그 조회
     * `cutoffDate`로부터 1시간 이전 로그 조회
